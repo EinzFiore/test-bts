@@ -1,0 +1,755 @@
+{
+	"info": {
+		"_postman_id": "f386cd14-3906-4464-bfc9-d2b70e9c9de6",
+		"name": "BTS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26191625"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "LOGIN",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Set token\", function () {\r",
+									"    let jsonData = pm.response.json();\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.environment.set(\"token\", `${jsonData.data.token}`);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "ujang12",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "secret123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LOGIN",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "ujang12",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "secret123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\",\n    \"success\": true,\n    \"errors\": null,\n    \"metadata\": [],\n    \"data\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE2ODM2MTk4NTksImV4cCI6MTY4MzYyMzQ1OSwibmJmIjoxNjgzNjE5ODU5LCJqdGkiOiIwbm9FVHZjOGxvWEsyVkJoIiwic3ViIjoiYWIyNmE2MWQtOGJjNC00YTE3LWJmMGYtZjU2NDRhOGE1OTEyIiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyIsInVzZXJuYW1lIjoidWphbmcxMiIsImVtYWlsIjoidWphbmcxMkBtYWlsLmNvbSIsImlkIjoiYWIyNmE2MWQtOGJjNC00YTE3LWJmMGYtZjU2NDRhOGE1OTEyIn0.DBUtYc-Ep5ZcKX4xRwHqTWhkkuQzE0BOKKLPhcL53jY\",\n        \"user\": {\n            \"id\": \"ab26a61d-8bc4-4a17-bf0f-f5644a8a5912\",\n            \"email\": \"ujang12@mail.com\",\n            \"username\": \"ujang12\",\n            \"created_at\": \"2023-05-09T08:10:19.000000Z\",\n            \"updated_at\": \"2023-05-09T08:10:19.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "REGISTER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "ujang12",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ujang12@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "secret123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "REGISTER",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "ujang12",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "ujang12@mail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "secret123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/auth/register",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\",\n    \"success\": true,\n    \"errors\": null,\n    \"metadata\": [],\n    \"data\": {\n        \"username\": \"ujang12\",\n        \"email\": \"ujang12@mail.com\",\n        \"id\": \"ab26a61d-8bc4-4a17-bf0f-f5644a8a5912\",\n        \"updated_at\": \"2023-05-09T08:10:19.000000Z\",\n        \"created_at\": \"2023-05-09T08:10:19.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "CHECKLIST",
+			"item": [
+				{
+					"name": "LIST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/checklist",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"checklist"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LIST",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/checklist",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"checklist"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\",\n    \"success\": true,\n    \"errors\": null,\n    \"metadata\": [],\n    \"data\": [\n        {\n            \"id\": \"00ceb32f-85fe-4697-a93a-ddfbe35e25ab\",\n            \"name\": \"Toko B\",\n            \"created_at\": \"2023-05-09T08:37:36.000000Z\",\n            \"updated_at\": \"2023-05-09T08:37:36.000000Z\"\n        },\n        {\n            \"id\": \"86e312e2-c056-490b-8c34-bed8d1a1dbd8\",\n            \"name\": \"Toko A\",\n            \"created_at\": \"2023-05-09T08:37:28.000000Z\",\n            \"updated_at\": \"2023-05-09T08:37:28.000000Z\"\n        },\n        {\n            \"id\": \"a62fd3d1-e446-4764-8324-8c6bcf74d64d\",\n            \"name\": \"Toko C\",\n            \"created_at\": \"2023-05-09T08:42:21.000000Z\",\n            \"updated_at\": \"2023-05-09T08:42:21.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "ADD",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Toko C",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/checklist",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"checklist"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ADD",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Toko C",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/checklist",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"checklist"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\",\n    \"success\": true,\n    \"errors\": null,\n    \"metadata\": [],\n    \"data\": {\n        \"name\": \"Toko C\",\n        \"id\": \"a62fd3d1-e446-4764-8324-8c6bcf74d64d\",\n        \"updated_at\": \"2023-05-09T08:42:21.000000Z\",\n        \"created_at\": \"2023-05-09T08:42:21.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/checklist/a62fd3d1-e446-4764-8324-8c6bcf74d64d",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"checklist",
+								"a62fd3d1-e446-4764-8324-8c6bcf74d64d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DELETE",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/checklist/a62fd3d1-e446-4764-8324-8c6bcf74d64d",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"checklist",
+										"a62fd3d1-e446-4764-8324-8c6bcf74d64d"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\",\n    \"success\": true,\n    \"errors\": null,\n    \"metadata\": [],\n    \"data\": {\n        \"id\": \"a62fd3d1-e446-4764-8324-8c6bcf74d64d\",\n        \"name\": \"Toko C\",\n        \"created_at\": \"2023-05-09T08:42:21.000000Z\",\n        \"updated_at\": \"2023-05-09T08:42:21.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ITEM",
+			"item": [
+				{
+					"name": "ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Product B",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/items",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"items"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ADD",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Product B",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/items",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"items"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\",\n    \"success\": true,\n    \"errors\": null,\n    \"metadata\": [],\n    \"data\": {\n        \"name\": \"Product B\",\n        \"id\": \"44618e52-44cf-4008-bcdb-98264ecb79df\",\n        \"updated_at\": \"2023-05-09T08:41:37.000000Z\",\n        \"created_at\": \"2023-05-09T08:41:37.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "LIST",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/items",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"items"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LIST",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/items",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"items"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\",\n    \"success\": true,\n    \"errors\": null,\n    \"metadata\": [],\n    \"data\": [\n        {\n            \"id\": \"44618e52-44cf-4008-bcdb-98264ecb79df\",\n            \"name\": \"Product B\",\n            \"created_at\": \"2023-05-09T08:41:37.000000Z\",\n            \"updated_at\": \"2023-05-09T08:41:37.000000Z\"\n        },\n        {\n            \"id\": \"5355bb4b-8d2a-4ebd-952b-7bbf0cc8e3a9\",\n            \"name\": \"Product A\",\n            \"created_at\": \"2023-05-09T08:41:28.000000Z\",\n            \"updated_at\": \"2023-05-09T08:41:28.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "CHECKLIST ITEM",
+			"item": [
+				{
+					"name": "LIST",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/checklist/00ceb32f-85fe-4697-a93a-ddfbe35e25ab/item",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"checklist",
+								"00ceb32f-85fe-4697-a93a-ddfbe35e25ab",
+								"item"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LIST",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/checklist/00ceb32f-85fe-4697-a93a-ddfbe35e25ab/item",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"checklist",
+										"00ceb32f-85fe-4697-a93a-ddfbe35e25ab",
+										"item"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\",\n    \"success\": true,\n    \"errors\": null,\n    \"metadata\": [],\n    \"data\": {\n        \"id\": \"00ceb32f-85fe-4697-a93a-ddfbe35e25ab\",\n        \"name\": \"Toko B\",\n        \"created_at\": \"2023-05-09T08:37:36.000000Z\",\n        \"updated_at\": \"2023-05-09T08:37:36.000000Z\",\n        \"items\": [\n            {\n                \"id\": \"44618e52-44cf-4008-bcdb-98264ecb79df\",\n                \"name\": \"Product B\",\n                \"created_at\": \"2023-05-09T08:41:37.000000Z\",\n                \"updated_at\": \"2023-05-09T08:41:37.000000Z\",\n                \"pivot\": {\n                    \"checklist_id\": \"00ceb32f-85fe-4697-a93a-ddfbe35e25ab\",\n                    \"item_id\": \"44618e52-44cf-4008-bcdb-98264ecb79df\"\n                }\n            },\n            {\n                \"id\": \"5355bb4b-8d2a-4ebd-952b-7bbf0cc8e3a9\",\n                \"name\": \"Product A\",\n                \"created_at\": \"2023-05-09T08:41:28.000000Z\",\n                \"updated_at\": \"2023-05-09T08:41:28.000000Z\",\n                \"pivot\": {\n                    \"checklist_id\": \"00ceb32f-85fe-4697-a93a-ddfbe35e25ab\",\n                    \"item_id\": \"5355bb4b-8d2a-4ebd-952b-7bbf0cc8e3a9\"\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "ADD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "item_id",
+									"value": "5355bb4b-8d2a-4ebd-952b-7bbf0cc8e3a9",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/api/checklist/00ceb32f-85fe-4697-a93a-ddfbe35e25ab/item",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"checklist",
+								"00ceb32f-85fe-4697-a93a-ddfbe35e25ab",
+								"item"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ADD",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "item_id",
+											"value": "44618e52-44cf-4008-bcdb-98264ecb79df",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/api/checklist/00ceb32f-85fe-4697-a93a-ddfbe35e25ab/item",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"checklist",
+										"00ceb32f-85fe-4697-a93a-ddfbe35e25ab",
+										"item"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\",\n    \"success\": true,\n    \"errors\": null,\n    \"metadata\": [],\n    \"data\": {\n        \"item_id\": \"44618e52-44cf-4008-bcdb-98264ecb79df\",\n        \"checklist_id\": \"00ceb32f-85fe-4697-a93a-ddfbe35e25ab\",\n        \"id\": \"745e00e2-fe06-4510-9c5c-8daada0f5bf3\",\n        \"updated_at\": \"2023-05-09T09:17:43.000000Z\",\n        \"created_at\": \"2023-05-09T09:17:43.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "SHOW",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/checklist/00ceb32f-85fe-4697-a93a-ddfbe35e25ab/item/44618e52-44cf-4008-bcdb-98264ecb79df",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"checklist",
+								"00ceb32f-85fe-4697-a93a-ddfbe35e25ab",
+								"item",
+								"44618e52-44cf-4008-bcdb-98264ecb79df"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/checklist/00ceb32f-85fe-4697-a93a-ddfbe35e25ab/item/44618e52-44cf-4008-bcdb-98264ecb79df",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"checklist",
+								"00ceb32f-85fe-4697-a93a-ddfbe35e25ab",
+								"item",
+								"44618e52-44cf-4008-bcdb-98264ecb79df"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/checklist/00ceb32f-85fe-4697-a93a-ddfbe35e25ab/item/44618e52-44cf-4008-bcdb-98264ecb79df",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"checklist",
+								"00ceb32f-85fe-4697-a93a-ddfbe35e25ab",
+								"item",
+								"44618e52-44cf-4008-bcdb-98264ecb79df"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
